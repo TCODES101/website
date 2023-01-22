@@ -1,0 +1,68 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{%static 'styles.css'%}">
+  <!--box icons-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+  <!--Navbar-->
+  <header>
+    <div class="nav container">
+      <!--logo-->
+      <a href="index.html" class="logo"><i class='bx bx-home'></i>J Flats</a>
+      <!--menu icon-->
+      <input type="checkbox" name="" id="menu">
+      <label for="menu"><i class='bx bx-menu' id="menu-icon"></i></label>
+      <!--nav list-->
+      <ul class="navbar">
+        
+        <li><a href="history">History</a></li>
+        
+      </ul>
+    
+      <!--login button-->
+      <a href="user" class="btn">Back</a>
+    </div>
+  </header>
+  <!--login-->
+  <section id="History">
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for transaction in transaction%}
+        <tr>
+          <td>{{transaction.name}}</td>
+          <td>{{transaction.desc}}</td>
+          <td>{{transaction.amount}}</td>
+          <td>{{transaction.date}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+    
+    
+    
+    
+    
+    
+  </section>
+  
+ 
+ 
+ 
+</body>
+</html>

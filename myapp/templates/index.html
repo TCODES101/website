@@ -1,0 +1,287 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JFLATS</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <!--box icons-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+  <!--Navbar-->
+  <header>
+    <div class="nav container">
+      <!--logo-->
+      <a href="index.html" class="logo"><i class='bx bx-home'></i>J Flats</a>
+      <!--menu icon-->
+      <input type="checkbox" name="" id="menu">
+      <label for="menu"><i class='bx bx-menu' id="menu-icon"></i></label>
+      <!--nav list-->
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        
+        <li><a href="#properties">Properties</a></li>
+      </ul>
+      <!--login button-->
+      
+      <a href="login" class="btn">Login</a>
+      
+    </div>
+  </header>
+  
+  <!--home-->
+  <section class="home container" id="home">
+    
+    <div class="home-text">
+      <div class="user">
+        
+        <h1>Welcome </h1>
+        
+      </div>
+      <h1>Find Your Next<br>Perfect Place To<br>Live.</h1>
+      
+    </div>
+  </section>
+  <!--about-->
+  <section class="about container" id="about">
+    <div class="about-img">
+      <img src="{%static 'images/about2.jpg' %}" alt="">
+    </div>
+    <div class="about-text">
+      <span>About Us</span>
+      <h2>We provide The Best<br>Property For You !</h2>
+      <p>We provide bedsitters, one and two bedroom apartments.</p>
+      <p>All with beautifu interior design, adequate water supply, good lighting and good security.</p>
+      <p>All these at affordable prices.</p>
+      <a href="#properties" class="btn">Learn more</a>
+    </div>
+  </section>
+  <!--sales-->
+  <section class="sales container" id="sales">
+    <!--box1-->
+    <div class="box">
+      <i class='bx bx-user' ></i>
+      <h3>Make Your Dream True</h3>
+      <p>Join our team and enjoy the best rental experience</p>
+    </div>
+    <!--box2-->
+    <div class="box">
+      <i class='bx bx-desktop' ></i>
+      <h3>Start Your membership</h3>
+      <p>Register and make your first payment to join or team.</p>
+    </div>
+    <div class="box">
+      <i class='bx bx-home-alt' ></i>
+      <h3>Enjoy Your new Home</h3>
+      <p>We would be happy to have you as our tenant.</p>
+    </div>
+  </section>
+  <!--properties-->
+  <section class="properties container" id="properties">
+    <div class="heading">
+      <span>Recent</span>
+      <h2>Our featured Properties</h2>
+      <p>Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Molestias, labore?</p>
+      <div class="properties-container
+       container">
+        <!--box1-->
+        <div class="box">
+          <img src="{% static 'images/bs.jpg' %}" alt="">
+         
+          <div class="content">
+            <div class="text">
+              <h3>Bedsitter</h3>
+              
+            </div>
+            {%if bsNumber <= 0%}
+              <div class="book">
+                <a href="javascript:void(0);" class="btn">Not available</a>
+              </div>
+            {%else%}
+              <div class="book">
+                <a href="signup" class="btn">Book</a>
+              </div>
+            {%endif%}
+          </div>
+          
+          
+        </div>
+        <!--box2-->
+
+        <div class="box">
+          <img src="{%static 'images/bs2.jpg'%}" alt="">
+  
+          <div class="content">
+            <div class="text">
+              <h3>Bedsitter</h3>
+              
+            </div>
+            {%if bsNumber <= 0%}
+            <div class="book">
+              <a href="javascript:void(0);" class="btn">Not available</a>
+            </div>
+            {%else%}
+            <div class="book">
+              <a href="signup" class="btn">Book</a>
+            </div>
+            {%endif%}
+            
+           
+          </div>
+          
+        </div>
+        <!--box3-->
+
+        <div class="box">
+          <img src="{%static 'images/bs3.jpg'%}" alt="">
+   
+          <div class="content">
+            <div class="text">
+              <h3>Bedsitter</h3>
+              
+            </div>
+            {%if bsNumber <= 0%}
+            <div class="book">
+              <a href="javascript:void(0);" class="btn">Not available</a>
+            </div>
+            {%else%}
+            <div class="book">
+              <a href="signup" class="btn">Book</a>
+            </div>
+            {%endif%}
+            
+          </div>
+          
+        </div>
+        <!--box4-->
+
+        <div class="box">
+          <img src="{%static 'images/1br.jpg'%}" alt="">
+          
+          <div class="content">
+            <div class="text">
+              <h3>One Bedroom</h3>
+          
+            </div>
+            {%if obNumber <= 0%}
+            <div class="book">
+              <a href="javascript:void(0);" class="btn">Not available</a>
+            </div>
+            {%else%}
+            <div class="book">
+              <a href="signup" class="btn">Book</a>
+            </div>
+            {%endif%}
+          </div>
+          
+        </div>
+        <!--box5-->
+
+        <div class="box">
+          <img src="{% static 'images/1bd1.jpg'%}" alt="">
+          
+          <div class="content">
+            <div class="text">
+              <h3>One bedroom</h3>
+              
+              
+            </div>
+            {%if obNumber <= 0%}
+            <div class="book">
+              <a href="javascript:void(0);" class="btn">Not available</a>
+            </div>
+            {%else%}
+            <div class="book">
+              <a href="signup" class="btn">Book</a>
+            </div>
+            {%endif%}
+          </div>
+          
+        </div>
+        <!--box6-->
+
+        <div class="box">
+          <img src="{%static 'images/1bd2.jpg' %}" alt="">
+          
+          <div class="content">
+            <div class="text">
+              <h3>One bedroomt</h3>
+              
+            
+            </div>
+          
+            {%if obNumber <= 0%}
+            <div class="book">
+              <a href="javascript:void(0);" class="btn">Not available</a>
+            </div>
+            {%else%}
+            <div class="book">
+              <a href="signup" class="btn">Book</a>
+            </div>
+            {%endif%}
+              
+            
+              
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <section class="money">
+    <!--box1-->
+    {% for p in properties %}
+    <div class="box">
+      <h3>{{p.name}}</h3>
+      <p>{{p.details}}</p>
+    </div>
+    {%endfor%}
+    <!--box2-->
+    
+  </section>
+  
+  
+  
+    
+      
+    
+  
+
+  
+  <!--footer-->
+  <section class="footer">
+    <div class="footer-container container">
+      <h2>J Flats</h2>
+      
+
+      <div class="footer-box">
+        <h3>Location</h3>
+        <a href="#">Ongata Rongai<br>Maasai lounge.</a>
+        
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <a href="#">+254 111 330 150</a>
+        <a href="#">tmumo23@gmail.com</a>
+        <div class="social">
+          <a href="#"><i class='bx bxl-facebook' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="https://www.instagram.com/galaxy._.101/?next=%2F"><i class='bx bxl-instagram' ></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--copyright-->
+  <div class="copyright">
+    <p>&#169; CarpoolVenom All Rights Reserved</p>
+  </div>
+</body>
+</html>

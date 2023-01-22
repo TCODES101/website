@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{%static 'styles.css'%}">
+  <!--box icons-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+  <!--Navbar-->
+  <header>
+    <div class="nav container">
+      <!--logo-->
+      <a href="/" class="logo"><i class='bx bx-home'></i>J Flats</a>
+      <!--menu icon-->
+      <input type="checkbox" name="" id="menu">
+      <label for="menu"><i class='bx bx-menu' id="menu-icon"></i></label>
+      <!--nav list-->
+      <h1>Welcome, {{user.username}}.</h1>
+      <ul class="navbar">
+        
+        
+        
+        <li><a href="history">Rent History</a></li>
+        
+      </ul>
+    
+      <!--login button-->
+      <a href="logout" class="btn">Logout</a>
+    </div>
+  </header>
+  <!--login-->
+  <div class="home2">
+    <p>Enter your rent below...</p>
+    <br>
+    <img src="{% static 'images/mpesa.jpg'%}" alt="">
+    
+  </div>
+
+  <div class="rent" id="rent">
+    <form action="user" method="POST">
+      {%csrf_token%}
+      <p>Enter Phone number:</p>
+      <input type="number" name="phone" id="" placeholder="254xxx" required>
+      <p>Enter amount:</p>
+      <input type="number" name="amount" id="" placeholder="amount" required>
+      <input type="date" name="date">
+        
+      <input type="submit" value="Submit" class="btn">
+      {%for message in messages%}
+      <h3>{{message}}</h3>{%endfor%}
+      <a href="complete" class="btn">Proceed</a>
+    </form>
+    
+    
+  </div>
+ 
+  
+ 
+ 
+</body>
+</html>

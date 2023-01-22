@@ -1,0 +1,90 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signUp</title>
+  <link rel="stylesheet" href="{%static 'styles.css' %}">
+  <!--box icons-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+  <!--Navbar-->
+  <header>
+    <div class="nav container">
+      <!--logo-->
+      <a href="index.html" class="logo"><i class='bx bx-home'></i>J Flats</a>
+    
+      <!--login button-->
+      <a href="login" class="btn">Log In</a>
+    </div>
+  </header>
+  <!--signup-->
+  <div class="signup">
+    <div class="signup-container">
+      <h2>Welcome, let's get started</h2>
+      
+      {% for message in messages %}
+      <h5>{{message}}</h5>{%endfor%}
+      <!--login form-->
+      <form action="signup" method="POST">
+        {% csrf_token %}
+        <p>Username:</p>
+        <input type="text" name="username" id="" placeholder="username" required>
+        <p>Email:</p>
+        <input type="email" name="email" id="" placeholder="youremail@gmail.com" required>
+       <p> Password: (not less than 8 characters)</p>
+        <input type="password" name="password" id="" placeholder="Enter your password" required>
+        <p>Repeat password:</p>
+        <input type="password" name="password2" id="" placeholder="Repeat password" required>
+        <input type="submit" value="Sign Up" class="button">
+        
+      </form>
+      <p>Already have an account? <a href="login.html">Log In</a></p>
+    </div>
+    <!--Log In image-->
+    <div class="signup-image">
+      <img src="{%static 'images/signUp.png'%}" alt="">
+    </div>
+  </div>
+  
+  <!--footer-->
+  <section class="footer">
+    <div class="footer-container container">
+      <h2>J Flats</h2>
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <a href="#">Agency</a>
+        <a href="#">Building</a>
+        <a href="#">Rates</a>
+      </div>
+
+      <div class="footer-box">
+        <h3>Locations</h3>
+        <a href="#">Birmingham</a>
+        <a href="#">London</a>
+        <a href="#">New York</a>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <a href="#">+254 111 330 150</a>
+        <a href="#">tmumo23@gmail.com</a>
+        <div class="social">
+          <a href="#"><i class='bx bxl-facebook' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="#"><i class='bx bxl-instagram' ></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--copyright-->
+  <div class="copyright">
+    <p>&#169; CarpoolVenom All Rights Reserved</p>
+  </div>
+</body>
+</html>

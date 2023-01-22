@@ -1,0 +1,88 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{%static 'styles.css'%}">
+  <!--box icons-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+  <!--Navbar-->
+  <header>
+    <div class="nav container">
+      <!--logo-->
+      <a href="index.html" class="logo"><i class='bx bx-home'></i>J Flats</a>
+      <!--menu icon-->
+      <input type="checkbox" name="" id="menu">
+      <label for="menu"><i class='bx bx-menu' id="menu-icon"></i></label>
+    
+      <!--login button-->
+      <a href="signup" class="btn">Sign Up</a>
+    </div>
+  </header>
+  <!--login-->
+  <div class="login">
+    <div class="login-container">
+      <h2>Login To Continue</h2>
+      <p>Log in with your data that you entered<br>during registration</p>
+      {%for message in messages%}
+      <h3>{{message}}</h3>{%endfor%}
+      <!--login form-->
+      <form action="login" method="POST">
+        {%csrf_token%}
+        <p>Enter your username:</p>
+        <input type="text" name="username" id="" placeholder="Username" required>
+        <p>Enter your password:</p>
+        <input type="password" name="password" id="" placeholder="password" required>
+        <input type="submit" value="Log In" class="button">
+        <a href="reset_password/">Forgot password?</a>
+      </form>
+      
+    </div>
+    <!--Log In image-->
+    <div class="login-image">
+      <img src="{%static 'images/login.jfif'%}" alt="">
+    </div>
+  </div>
+  
+  <!--footer-->
+  <section class="footer">
+    <div class="footer-container container">
+      <h2>J Flats</h2>
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <a href="#">Agency</a>
+        <a href="#">Building</a>
+        <a href="#">Rates</a>
+      </div>
+
+      <div class="footer-box">
+        <h3>Locations</h3>
+        <a href="#">Birmingham</a>
+        <a href="#">London</a>
+        <a href="#">New York</a>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact</h3>
+        <a href="#">+254 111 330 150</a>
+        <a href="#">tmumo23@gmail.com</a>
+        <div class="social">
+          <a href="#"><i class='bx bxl-facebook' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="#"><i class='bx bxl-instagram' ></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--copyright-->
+  <div class="copyright">
+    <p>&#169; CarpoolVenom All Rights Reserved</p>
+  </div>
+</body>
+</html>
